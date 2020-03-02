@@ -21,7 +21,7 @@ public class Counter {
     }
 
     public void decrement(){
-        if ((getValue() - getStep()) > 0) {
+        if ((getValue() - getStep()) >= 0) {
             setValue(getValue() - getStep());
         }
     }
