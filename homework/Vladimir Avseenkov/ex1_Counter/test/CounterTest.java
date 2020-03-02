@@ -20,6 +20,12 @@ public class CounterTest {
         System.out.println("Value = " + counter.getValue());
         System.out.println("Step = " + counter.getStep());
 
+        counter.reset();
+        counter.setStep(10);
+        System.out.println(counter.toString());
+        counter.decrement();
+        System.out.println(counter.toString());
+
     }
 
 }
