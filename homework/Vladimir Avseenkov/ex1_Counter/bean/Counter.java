@@ -30,7 +30,10 @@ public class Counter {
     }
 
     public void increment() {
-        value += step;
+        int resultOfIncrement = value + step;
+        if (resultOfIncrement <= 100) {
+            value += step;
+        }
     }
 
     public void decrement() {
@@ -42,6 +45,7 @@ public class Counter {
 
     public void reset() {
         this.setValue(0);
+        this.setStep(1);
     }
 
     @Override
