@@ -91,5 +91,7 @@ public class TV {
         return "Current volume is " + currentVolume;
     }
 
-
+    public String getBrandName() {
+        return brandName;
+    }
 }
