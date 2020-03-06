@@ -15,7 +15,7 @@ public class NumberService implements Runnable {
     }
 
     public void rangeSum(int start, int finish) {
-        if (start <= finish) {
+        if (start >= finish) {
             startMoreFinish();
         } else {
             finishMoreStart();
@@ -24,7 +24,7 @@ public class NumberService implements Runnable {
         System.out.println("Sum of positive numbers = " + summaryEvenNumbers);
     }
 
-    public void startMoreFinish() {
+    public void finishMoreStart() {
         for (int i = getStartInterval(); i <= getFinishInterval(); i++) {
             System.out.print(i + " ");
             setSummaryNumbers(getSummaryNumbers() + i);
@@ -34,7 +34,7 @@ public class NumberService implements Runnable {
         }
     }
 
-    public void finishMoreStart() {
+    public void startMoreFinish() {
         for (int j = getFinishInterval(); j <= getStartInterval(); j++) {
             System.out.print(j + " ");
             setSummaryNumbers(getSummaryNumbers() + j);
