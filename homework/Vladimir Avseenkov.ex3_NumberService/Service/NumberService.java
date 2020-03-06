@@ -2,7 +2,7 @@ package Service;
 
 public class NumberService implements Runnable {
     int startOfRange, endOfRange;
-    int totalNumers = 0;
+    int totalNumbers = 0;
     int totalEvenNumbers = 0;
     int summary = 0;
     String output = "";
@@ -47,7 +47,7 @@ public class NumberService implements Runnable {
 
     public void calculateSummary(int i) {
         output += i + " + ";
-        totalNumers++;
+        totalNumbers++;
         summary += i;
     }
 
