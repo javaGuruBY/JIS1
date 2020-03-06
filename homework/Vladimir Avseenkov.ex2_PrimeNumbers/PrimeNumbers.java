@@ -16,7 +16,6 @@ public class PrimeNumbers {
             if (i == 17 || i == 71) {
                 continue;
             }
-
             if (i > 2 && i % 2 ==0) {
                 continue;
             }
