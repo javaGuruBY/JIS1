@@ -16,7 +16,7 @@ public class PrimeNumbers {
             if (i == 17 || i == 71) {
                 continue;
             }
-            if (i > 2 && i % 2 ==0) {
+            if (checkForEvenNumber(i)) {
                 continue;
             }
             if (count >= 50) {
@@ -26,15 +26,7 @@ public class PrimeNumbers {
             if (i == 2) {
                 addToSimpleNumbers(i);
             } else {
-                for (int j = 2; j < i; j++) {
-                    if (i % j == 0) {
-                        simple = false;
-                    }
-                }
-                if (simple) {
-                    addToSimpleNumbers(i);
-                }
-
+                numberBruteForce(i);
             }
 
         }
@@ -45,5 +37,25 @@ public class PrimeNumbers {
         summ += i;
         count++;
         output += i + " ";
+    }
+
+    public static boolean checkForEvenNumber (int i) {
+        if (i > 2 && i % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void numberBruteForce (int i) {
+        boolean simple = true;
+        for (int j = 2; j < i; j++) {
+            if (i % j == 0) {
+                simple = false;
+            }
+        }
+        if (simple) {
+            addToSimpleNumbers(i);
+        }
     }
 }
