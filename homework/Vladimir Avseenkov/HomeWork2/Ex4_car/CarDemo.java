@@ -1,7 +1,7 @@
 package HomeWork2.Ex4_car;
 
 public class CarDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Car bmw = new Car("BMW E39", "Rusty-Dusty", 230);
         bmw.accelerate(123);
         System.out.println(bmw.toString());
@@ -23,5 +23,8 @@ public class CarDemo {
         if (SAAB.canAccelerate()) {
             System.out.println("Infinity is not a limit");
         }
+
+        CarTest test = new CarTest();
+        test.run();
     }
 }
