@@ -13,6 +13,10 @@ public class Car {
         this.maxSpeed = maxSpeed;
     }
 
+    public String getModel() {
+        return model;
+    }
+
     public int getMaxSpeed() {
         return maxSpeed;
     }

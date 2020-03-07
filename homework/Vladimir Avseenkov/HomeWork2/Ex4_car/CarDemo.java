@@ -11,5 +11,17 @@ public class CarDemo {
         Car SAAB = new Car("SAAB 95", "Cosmic Blue", 260);
         SAAB.accelerate(333);
         System.out.println(SAAB.toString());
+
+        if (!bmw.isDriving()) {
+            System.out.println(bmw.getModel() + " now is stopped, because it's almost broken!");
+        }
+
+        if (SAAB.isDriving()) {
+            System.out.println(SAAB.getModel() + ". Born from jets. ");
+        }
+
+        if (SAAB.canAccelerate()) {
+            System.out.println("Infinity is not a limit");
+        }
     }
 }
