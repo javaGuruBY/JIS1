@@ -29,5 +29,18 @@ public class ArrayService {
     public double avg(int[] array) {
         return sum(array) / array.length;
     }
+    
+    public void sort(int[] array){
+        Arrays.sort(array);
+    }
+
+    public void swap(int[] array){
+        int firstElement;
+        for (int i = 0; i < array.length / 2; i++) {
+            firstElement = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = firstElement;
+        }
+    }
 
 }
