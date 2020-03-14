@@ -2,7 +2,7 @@ import bean.Animal;
 import bean.Cat;
 import bean.Dog;
 
-public class main {
+public class Application {
     public static void main(String[] args) {
         Cat cat = new Cat();
         cat.voice();

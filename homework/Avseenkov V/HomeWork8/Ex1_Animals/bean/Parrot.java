@@ -1,6 +1,9 @@
 package bean;
 
 public class Parrot extends Bird {
+
+    public Parrot() {}
+
     @Override
     public String toString() {
         return "bean.Parrot " +

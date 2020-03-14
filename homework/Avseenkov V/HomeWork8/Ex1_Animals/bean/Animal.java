@@ -7,6 +7,32 @@ public class Animal {
     protected int numberOfLegs;
     protected String says;
 
+    public Animal() {}
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getNumberOfLegs() {
+        return numberOfLegs;
+    }
+
+    public void setNumberOfLegs(int numberOfLegs) {
+        this.numberOfLegs = numberOfLegs;
+    }
+
+    public String getSays() {
+        return says;
+    }
+
+    public void setSays(String says) {
+        this.says = says;
+    }
+
     @Override
     public String toString() {
         return "bean.Animal " +

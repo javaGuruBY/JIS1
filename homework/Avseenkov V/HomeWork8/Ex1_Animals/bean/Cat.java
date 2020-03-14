@@ -2,6 +2,8 @@ package bean;
 
 public class Cat extends Mammal{
 
+    public Cat() {}
+
     @Override
     public void voice() {
         System.out.println("Meow!");

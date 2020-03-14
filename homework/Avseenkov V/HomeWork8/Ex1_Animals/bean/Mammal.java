@@ -1,7 +1,17 @@
 package bean;
 
 public abstract class Mammal extends Animal {
-    boolean breath;
+    public boolean breath;
+
+    public Mammal() {}
+
+    public boolean isBreath() {
+        return breath;
+    }
+
+    public void setBreath(boolean breath) {
+        this.breath = breath;
+    }
 
     protected abstract void voice();
 

@@ -3,6 +3,16 @@ package bean;
 public class Bird extends Animal {
     boolean predator;
 
+    public Bird() {}
+
+    public boolean isPredator() {
+        return predator;
+    }
+
+    public void setPredator(boolean predator) {
+        this.predator = predator;
+    }
+
     @Override
     public String toString() {
         return "bean.Bird " +
