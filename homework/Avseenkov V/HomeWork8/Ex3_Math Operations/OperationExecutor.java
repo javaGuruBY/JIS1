@@ -9,6 +9,8 @@ public class OperationExecutor implements Runnable {
     void mathOps() {
         MathOperations[] mathOperations = {new Addition(), new Division(), new Multiplication(), new Substract()};
         execute(mathOperations, 3, 5);
+
+        execute(mathOperations, 10, 667);
     }
 
     void execute(MathOperations[] mathOperations, double a, double b) {
