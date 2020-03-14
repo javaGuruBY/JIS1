@@ -46,10 +46,10 @@ public class User {
     }
 
     public boolean userLogin(String userName, String enteredPassword) {
-        if (getTryToLoginCount() <= 0 || isBlocked() == true) {
+        if (getTryToLoginCount() <= 0 || isBlocked()) {
             System.out.println("User " + userName + " blocked!");
             return false;
-        } else if (getPassword().equals(enteredPassword) & isBlocked() == false & getTryToLoginCount() > 0) {
+        } else if (getPassword().equals(enteredPassword) & !isBlocked() & getTryToLoginCount() > 0) {
             resetLoginCount();
             System.out.println(getUserName() + " has autorised!");
             return true;
@@ -57,6 +57,10 @@ public class User {
             this.tryToLoginCount--;
             System.out.println("Left attempts: " + this.tryToLoginCount + " for user " + userName);
             return false;
+        }
+
+        if (this.tryToLoginCount == 0) {
+            setBlocked(true);
         }
     }
 }

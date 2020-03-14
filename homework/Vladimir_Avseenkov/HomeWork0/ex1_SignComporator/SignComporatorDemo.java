@@ -9,7 +9,5 @@ public class SignComporatorDemo {
         System.out.print("Введите число: ");
         int number = input.nextInt();
         System.out.println(signComporator.compare(number));
-        SignComporatorTest test = new SignComporatorTest();
-        test.runTests();
     }
 }

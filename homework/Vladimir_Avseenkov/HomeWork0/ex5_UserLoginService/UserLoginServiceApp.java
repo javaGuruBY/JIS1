@@ -13,7 +13,6 @@ public class UserLoginService {
         userVov4eg.userLogin(userVov4eg.userName, "1q2w3e4r5t");
         userVov4eg.resetLoginCount();
         userVov4eg.userLogin(userVov4eg.userName, userVov4eg.password);
-        userVov4eg.setBlocked(true);
         userVov4eg.userLogin(userVov4eg.userName, userVov4eg.password);
         userSomeone.userLogin(userSomeone.userName, userSomeone.password);
 

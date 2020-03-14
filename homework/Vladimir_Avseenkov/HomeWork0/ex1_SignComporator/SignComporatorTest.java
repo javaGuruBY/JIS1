@@ -3,9 +3,9 @@ package Vladimir_Avseenkov.HomeWork0.ex1_SignComporator;
 import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
 
 public class SignComporatorTest {
-    SignComporator signComporator = new SignComporator();
 
     public void assertEqual (String expected, String actual, String description) throws Exception {
+        SignComporator signComporator = new SignComporator();
         if (actual.equals(expected)) {
             System.out.println(description + " passed");
         } else {
@@ -20,6 +20,7 @@ public class SignComporatorTest {
     }
 
     public void testExpectedResultMoreThenZero() throws Exception {
+        SignComporator signComporator = new SignComporator();
         String expected = signComporator.positive;
         String actual = signComporator.compare(1);
         String description = "Test for positive number has";
@@ -27,6 +28,7 @@ public class SignComporatorTest {
     }
 
     public void testExpectedResultLessThenZero() throws Exception {
+        SignComporator signComporator = new SignComporator();
         String expected = signComporator.negative;
         String actual = signComporator.compare(-1);
         String description = "Test for negative number has";
@@ -34,6 +36,7 @@ public class SignComporatorTest {
     }
 
     public void testExpectedResulEqualsZero() throws Exception {
+        SignComporator signComporator = new SignComporator();
         String expected = signComporator.zero;
         String actual = signComporator.compare(0);
         String description = "Test for zero number has";

@@ -13,6 +13,5 @@ public class SignComporator {
         } else if (number == 0) {
             return zero;
         }
-        return null;
     }
 }
