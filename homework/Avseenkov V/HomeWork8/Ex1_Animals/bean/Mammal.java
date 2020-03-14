@@ -1,7 +1,7 @@
 package bean;
 
 public abstract class Mammal extends Animal {
-    protected boolean breath;
+    boolean breath;
 
     protected abstract void voice();
 

@@ -8,5 +8,6 @@ public class main {
         cat.voice();
         Dog dog = new Dog();
         dog.voice();
+        dog.breath = true;
     }
 }

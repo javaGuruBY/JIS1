@@ -1,6 +1,8 @@
 package bean;
 
 public class Dog extends Mammal {
+    public Object breath;
+
     @Override
     public void voice() {
         System.out.println("Woof-woof");
