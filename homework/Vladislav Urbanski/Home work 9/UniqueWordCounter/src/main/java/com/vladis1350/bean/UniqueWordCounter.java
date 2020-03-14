@@ -3,11 +3,7 @@ package com.vladis1350.bean;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * void addWord(String word) - добавляет строку и считает количество раз, которое она была добавлена;
- * int getMostFrequentWord() - возвращает строку, которая была добавлена чаще всего;
- * void printWordsFrequency() - печатает на экран содержимое коллекции, а также количество раз, которое слово было добавлено;
- * */
+
 public class UniqueWordCounter {
     Map<String, Integer> uniqueWordList = new HashMap<>();
     private int count = 1;
@@ -23,9 +19,9 @@ public class UniqueWordCounter {
 
     public String getMostFrequentWord() {
         int maxCount = 1;
-        for (Map.Entry<String, Integer> map: uniqueWordList.entrySet()) {
-            if (map.getValue() > maxCount) {
-                maxCount = map.getValue();
+        for (Map.Entry<String, Integer> entryMap: uniqueWordList.entrySet()) {
+            if (entryMap.getValue() > maxCount) {
+                maxCount = entryMap.getValue();
             }
 
         }
@@ -34,17 +30,17 @@ public class UniqueWordCounter {
 
     public String searchByValue(int value) {
         String result = "";
-        for (Map.Entry<String, Integer> map: uniqueWordList.entrySet()) {
-            if (map.getValue() == value) {
-                result = map.getKey();
+        for (Map.Entry<String, Integer> entryMap: uniqueWordList.entrySet()) {
+            if (entryMap.getValue() == value) {
+                result = entryMap.getKey();
             }
         }
         return result;
     }
 
     public void printWordsFrequency() {
-        for (Map.Entry<String, Integer> map: uniqueWordList.entrySet()) {
-            System.out.println(map.getKey() + " = " + map.getValue());
+        for (Map.Entry<String, Integer> entryMap: uniqueWordList.entrySet()) {
+            System.out.println(entryMap.getKey() + " = " + entryMap.getValue());
         }
     }
 }
