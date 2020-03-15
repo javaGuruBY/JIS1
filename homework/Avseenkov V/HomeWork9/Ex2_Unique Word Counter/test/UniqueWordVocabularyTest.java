@@ -1,30 +1,30 @@
 package test;
 
-import sesrvice.UniqueWordVocabulary;
+import sesrvice.UniqueWordCounter;
 
 public class UniqueWordVocabularyTest {
 
-    public void testRunner (){
+    public void testRunner () throws Exception {
         shouldReturn2Words();
     }
 
-    void shouldReturn2Words (){
-        UniqueWordVocabulary testVocabulary = new UniqueWordVocabulary();
-        int expected = 3;
+    void shouldReturn2Words () throws Exception {
+        UniqueWordCounter testVocabulary = new UniqueWordCounter();
+        String expected = "First";
         testVocabulary.addWord("First");
         testVocabulary.addWord("First");
         testVocabulary.addWord("First");
         testVocabulary.addWord("Second");
         testVocabulary.addWord("Second");
         testVocabulary.addWord("Third");
-        int actual = testVocabulary.getWordsCount();
+        String actual = testVocabulary.getMostFrequentWord();
         String description = "Test for adding words and word counter has ";
-
+        assertsEqualsString(description,expected,actual);
     }
 
 
-    void assertsEqualsInteger (String desription, int expected, int actual) throws Exception {
-        if (expected == actual) {
+    void assertsEqualsString (String desription, String expected, String actual) throws Exception {
+        if (expected.equals(actual)) {
             System.out.println(desription + "passed");
         } else {
             throw new Exception(desription + "FAILED!");
