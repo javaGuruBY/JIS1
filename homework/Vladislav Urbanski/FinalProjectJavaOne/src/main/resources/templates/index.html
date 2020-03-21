@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<style>
+    .disc {
+        border: 1px solid #333; /* Рамка */
+        display: inline-block;
+        padding: 5px 15px; /* Поля */
+        text-decoration: none; /* Убираем подчёркивание */
+        color: #000; /* Цвет текста */
+    }
+</style>
+<body>
+<div align="center">
+    <h1>Products</h1>
+    <a href="new">Create new products</a>
+    <br/><br/>
+    <table width="650px" cellpadding="10">
+        <tr>
+            <td align="left">
+                <form action="#" th:action="@{/search}" th:object="${product}" method="post">
+                    <input type="text" name="id"/>&nbsp;&nbsp;&nbsp;
+                    <button type="submit">Search</button>
+                </form>
+            </td>
+            <td>
+                <form action="#" th:action="@{/cancel}" th:object="${product}" method="post">
+                    <button type="submit">Cancel</button>
+                </form>
+            </td>
+            <td>
+                <form action="#" th:action="@{/filter}" th:object="${product}" method="post">
+                    <select name="category">
+                        <option th:each="category : ${T(com.vladis1350.enumCategory.Category).values()}"
+                                th:value="${category}"
+                                th:text="${category.roleCode}">
+                        </option>
+                    </select>
+                    <button type="submit">Filter</button>
+                </form>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="set" class="disc">Discount for Category</a>
+            </td>
+        </tr>
+    </table>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Discount</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}">ID</td>
+            <td th:text="${product.name}">Name</td>
+            <td th:text="${product.price}">Price</td>
+            <td th:text="${product.category}">Category</td>
+            <td th:text="${product.discount}">Discount</td>
+            <td>
+                <a th:href="@{'/edit/' + ${product.id}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete/' + ${product.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
