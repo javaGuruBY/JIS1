@@ -25,13 +25,15 @@ public class ProductService implements InterfaceFromProduct {
 
     @Override
     public void setDiscountEnumProducts(Enum category, BigDecimal newDiscount) {
-        Shop.products.stream().filter(i -> i.category.equals(category)).forEach(i -> i.discount = newDiscount);
+        Shop.products.stream()
+                .filter(i -> i.category.equals(category))
+                .forEach(i -> i.discount = newDiscount);
     }
 
     @Override
     public Product getProductById(Long id) {
-        for (Product entry: Shop.products) {
-            if(entry.idProduct.compareTo(id) == 0) {
+        for (Product entry : Shop.products) {
+            if (entry.idProduct.compareTo(id) == 0) {
                 return entry;
             }
         }
@@ -40,8 +42,8 @@ public class ProductService implements InterfaceFromProduct {
 
     @Override
     public void removeProductById(Long id) {
-        for (Product entry: Shop.products) {
-            if(entry.idProduct.compareTo(id) == 0) {
+        for (Product entry : Shop.products) {
+            if (entry.idProduct.compareTo(id) == 0) {
                 Shop.products.remove(entry);
                 return;
             }
@@ -51,12 +53,16 @@ public class ProductService implements InterfaceFromProduct {
 
     @Override
     public void editPrice(Long id, BigDecimal newPrice) {
-        Shop.products.stream().filter(i -> i.idProduct == id).forEach(i -> i.price = newPrice);
+        Shop.products.stream()
+                .filter(i -> i.idProduct == id)
+                .forEach(i -> i.price = newPrice);
     }
 
     @Override
     public void editDiscount(Long id, BigDecimal newDiscount) {
-        Shop.products.stream().filter(i -> i.idProduct == id).forEach(i -> i.discount = newDiscount);
+        Shop.products.stream()
+                .filter(i -> i.idProduct == id)
+                .forEach(i -> i.discount = newDiscount);
     }
 
     @Override
@@ -67,8 +73,8 @@ public class ProductService implements InterfaceFromProduct {
     @Override
     public List<Product> getListEnumProducts(Enum category) {
         List<Product> getList = new LinkedList<>();
-        for (Product entry: Shop.products) {
-            if(entry.category.equals(category)) {
+        for (Product entry : Shop.products) {
+            if (entry.category.equals(category)) {
                 getList.add(entry);
             }
         }
