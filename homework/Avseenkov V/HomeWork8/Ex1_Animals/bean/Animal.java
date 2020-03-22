@@ -1,8 +1,9 @@
 package bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Animal {
+public class Animal implements Serializable {
     protected String color;
     protected int numberOfLegs;
     protected String says;
@@ -50,4 +51,6 @@ public class Animal {
                 color.equals(animal.color) &&
                 Objects.equals(says, animal.says);
     }
+
+
 }

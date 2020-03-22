@@ -1,6 +1,8 @@
 package bean;
 
-public class Bird extends Animal {
+import java.io.Serializable;
+
+public class Bird extends Animal implements Serializable {
     boolean predator;
 
     public Bird() {}

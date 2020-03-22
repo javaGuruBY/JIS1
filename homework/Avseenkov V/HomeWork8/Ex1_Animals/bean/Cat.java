@@ -1,6 +1,8 @@
 package bean;
 
-public class Cat extends Mammal{
+import java.io.Serializable;
+
+public class Cat extends Mammal implements Serializable {
 
     public Cat() {}
 

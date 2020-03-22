@@ -1,6 +1,8 @@
 package bean;
 
-public abstract class Mammal extends Animal {
+import java.io.Serializable;
+
+public abstract class Mammal extends Animal implements Serializable {
     public boolean breath;
 
     public Mammal() {}
