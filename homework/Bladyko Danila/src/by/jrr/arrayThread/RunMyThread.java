@@ -1,4 +1,4 @@
-package by.jrr.thread;
+package by.jrr.arrayThread;
 
 import by.jrr.test.ArrayServiceTest;
 
