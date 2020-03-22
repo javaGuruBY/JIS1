@@ -56,11 +56,11 @@ public class User {
         } else {
             this.tryToLoginCount--;
             System.out.println("Left attempts: " + this.tryToLoginCount + " for user " + userName);
+            if (this.tryToLoginCount == 0) {
+                setBlocked(true);
             return false;
         }
 
-        if (this.tryToLoginCount == 0) {
-            setBlocked(true);
         }
     }
 }
