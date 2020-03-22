@@ -1,4 +1,4 @@
-package by.jrr.run;
+package by.jrr;
 
 import by.jrr.bean.PrimeNumbers;
 
