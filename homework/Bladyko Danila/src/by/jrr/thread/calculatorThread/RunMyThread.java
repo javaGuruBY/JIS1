@@ -1,4 +1,4 @@
-package by.jrr.thread;
+package by.jrr.calculatorThread;
 
 import by.jrr.tests.PowerCalculatorTest;
 
