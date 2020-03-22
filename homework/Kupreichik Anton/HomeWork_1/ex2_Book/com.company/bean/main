@@ -11,7 +11,7 @@ public class Main {
         numberOfBooks = in.nextInt();
         Book[] book = new Book[numberOfBooks+1];
         String name, author;
-        for (int i = 0; i < numberOfBooks; i += 1) {
+        for (int i = 0; i < numberOfBooks; i ++ 1) {
             book[i] = new Book(i);
             System.out.println("Введите название для книги");
             name = in.nextLine();
