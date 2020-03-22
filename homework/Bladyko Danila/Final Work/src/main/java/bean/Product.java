@@ -24,8 +24,18 @@ public class Product implements Serializable {
     }
 
     public enum Category {
-        Pizza,
-        Ice
+        PIZZA("Pizza"),
+        ICE("Ice");
+
+        private final String newCategory;
+
+        Category(String newCategory) {
+            this.newCategory = newCategory;
+        }
+
+        public String getNewCategory() {
+            return newCategory;
+        }
     }
 
     public void lessId() {
