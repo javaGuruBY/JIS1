@@ -1,4 +1,4 @@
-package by.jrr.thread;
+package by.jrr.loopThread;
 
 import by.jrr.tests.CarTest;
 
