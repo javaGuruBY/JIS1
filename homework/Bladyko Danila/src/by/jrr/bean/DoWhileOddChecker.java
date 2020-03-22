@@ -7,7 +7,8 @@ public class DoWhileOddChecker {
             if(i % 2 != 0) {
                 System.out.println(i);
             }
+            i++;
         }
-        while(++i <= 50);
+        while(i <= 50);
     }
 }
