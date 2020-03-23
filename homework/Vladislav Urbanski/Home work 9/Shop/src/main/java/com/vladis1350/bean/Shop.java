@@ -1,20 +1,16 @@
 package com.vladis1350.bean;
 
+import com.vladis1350.factory.ProductFactory;
+import com.vladis1350.types.ProductTypes;
+
 import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
-import static java.math.BigDecimal.ROUND_CEILING;
-
 public class Shop {
-    private List<Product> productList = new LinkedList<Product>();
+    private List<Product> productList = ProductFactory.createListProducts(50);
 
     public Shop() {
-        productList.add(new Product("Milk", new BigDecimal(1.2).setScale(3, ROUND_CEILING)));
-        productList.add(new Product("Chips", new BigDecimal(9.4).setScale(3, ROUND_CEILING)));
-        productList.add(new Product("Potatoes", new BigDecimal(6.2).setScale(3, ROUND_CEILING)));
-        productList.add(new Product("Fat", new BigDecimal(11.12).setScale(3, ROUND_CEILING)));
-        productList.add(new Product("Bred", new BigDecimal(17.62).setScale(3, ROUND_CEILING)));
     }
 
     public void addProduct(Product product) {
