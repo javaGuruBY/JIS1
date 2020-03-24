@@ -10,51 +10,39 @@ public class Category implements MapInterface {
     static Map<String, String> categoryMap = new HashMap<>();
 
     public String chooseCategory(int a) {
-        if (a == 1) {
-            return "Grocery";
+        switch (a) {
+            case 1:
+                return "Grocery";
+            case 2:
+                return "Gastronomy";
+            case 3:
+                return "Baby food";
+            case 4:
+                return "Diet food";
+            case 5:
+                return "Frozen products";
+            case 6:
+                return "Confectionery";
+            case 7:
+                return "Cookery";
+            case 8:
+                return "Dairy";
+            case 9:
+                return "Meat, bird, egg";
+            case 10:
+                return "Soft Drinks";
+            case 11:
+                return "Fish, seafood";
+            case 12:
+                return "Sports nutrition";
+            case 13:
+                return "Fruits, vegetables, mushrooms";
+            case 14:
+                return "Bakery products";
+            case 15:
+                return "Tea, Coffee, Cocoa";
         }
-        if (a == 2) {
-            return "Gastronomy";
-        }
-        if (a == 3) {
-            return "Baby food";
-        }
-        if (a == 4) {
-            return "Diet food";
-        }
-        if (a == 5) {
-            return "Frozen products";
-        }
-        if (a == 6) {
-            return "Confectionery";
-        }
-        if (a == 7) {
-            return "Cookery";
-        }
-        if (a == 8) {
-            return "Dairy";
-        }
-        if (a == 9) {
-            return "Meat, bird, egg";
-        }
-        if (a == 10) {
-            return "Soft Drinks";
-        }
-        if (a == 11) {
-            return "Fish, seafood";
-        }
-        if (a == 12) {
-            return "Sports nutrition";
-        }
-        if (a == 13) {
-            return "Fruits, vegetables, mushrooms";
-        }
-        if (a == 14) {
-            return "Bakery products";
-        }
-        if (a == 15) {
-            return "Tea, Coffee, Cocoa";
-        } else return "null";
+        return "Other products";
     }
 
     public void removeProduct(String name) {
