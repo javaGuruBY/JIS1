@@ -13,8 +13,8 @@ public class PalindromeTest {
 
         boolean expectedResult = true;
 
-        checkGoodAnswer(actualFirstResult, expectedResult, "Test 1");
-        checkGoodAnswer(actualSecondResult, expectedResult, "Test 2");
+        checkGoodAnswer(actualFirstResult, expectedResult, "Test testShouldAnswerTrue");
+        checkGoodAnswer(actualSecondResult, expectedResult, "Test testShouldAnswerTrue");
     }
 
     public void testShouldAnswerFalse() throws Exception {
@@ -24,7 +24,7 @@ public class PalindromeTest {
 
         boolean expectedResult = false;
 
-        checkGoodAnswer(actualResult, expectedResult, "Test 3");
+        checkGoodAnswer(actualResult, expectedResult, "Test testShouldAnswerFalse");
     }
 
     private void checkGoodAnswer(boolean actualResult, boolean expectedResult, String test) throws Exception {
