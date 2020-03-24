@@ -30,7 +30,7 @@ public class CreditCardService {
 
     private int getMoney(CreditCard creditCard, int money) {
         if(creditCard.loanDebt + (creditCard.balance - money) <= creditCard.creditLimit) {
-            creditCard.balance =- money;
+            creditCard.balance -= money;
             if(creditCard.balance < 0) {
                 creditCard.loanDebt += ((-1) * creditCard.balance);
                 creditCard.balance = 0;
