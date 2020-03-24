@@ -26,8 +26,8 @@ public class MenuString {
     public static final String REMOVE_PRODUCT_FROM_CATEGORY = "2.Delete product from category";
     public static final String DELETE_CATEGORY = "3.Delete category";
     public static final String SHOW_CATEGORY = "4.Show all category";
-    public static final String RETURN_ALL_PRODUCTS_FROM_CATEGORY = "5.Return all products";
-    public static final String EXIT_CATEGORY = "7.Exit";
+    public static final String RETURN_ALL_PRODUCTS_FROM_CATEGORY = "5.Show all products";
+    public static final String EXIT_CATEGORY = "6.Exit";
     public static final String NO_SUCH_PRODUCT = "No such product";
     public static final String NO_SUCH_CATEGORY = "No such category";
     public static final String THIS_NOT_A_NUMBER = "This not a number";
@@ -46,8 +46,7 @@ public class MenuString {
             "13.Fruits, vegetables, mushrooms\n" +
             "14.Bakery products\n" +
             "15.Tea, Coffee, Cocoa";
-    public static final String ADD_DISCOUNT_FOR_ALL_PRODUCTS_IN_CATEGORY = "6.Set a certain discount for the whole category";
-    public void Menu(){
+    public static void Menu(){
         System.out.println(MenuString.ADD_PRODUCT);
         System.out.println(MenuString.REMOVE_PRODUCT);
         System.out.println(MenuString.FIND_PRODUCT);
@@ -57,5 +56,14 @@ public class MenuString {
         System.out.println(MenuString.FILTRATION);
         System.out.println(MenuString.EXIT_MAIN);
         System.out.println(MenuString.YOU_CHOOSE);
+    }
+    public static void categoryMenu(){
+        System.out.println(MenuString.ADD_PRODUCT_TO_CATEGORY);
+        System.out.println(MenuString.REMOVE_PRODUCT_FROM_CATEGORY);
+        System.out.println(MenuString.DELETE_CATEGORY);
+        System.out.println(MenuString.SHOW_CATEGORY);
+        System.out.println(MenuString.RETURN_ALL_PRODUCTS_FROM_CATEGORY);
+        System.out.println(MenuString.EXIT_CATEGORY);
+
     }
 }
