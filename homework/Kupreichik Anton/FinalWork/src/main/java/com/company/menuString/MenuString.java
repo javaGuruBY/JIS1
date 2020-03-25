@@ -46,24 +46,13 @@ public class MenuString {
             "13.Fruits, vegetables, mushrooms\n" +
             "14.Bakery products\n" +
             "15.Tea, Coffee, Cocoa";
-    public static void Menu(){
-        System.out.println(MenuString.ADD_PRODUCT);
-        System.out.println(MenuString.REMOVE_PRODUCT);
-        System.out.println(MenuString.FIND_PRODUCT);
-        System.out.println(MenuString.SHOW_ALL_PRODUCT);
-        System.out.println(MenuString.CHANGE_PRODUCT);
-        System.out.println(MenuString.WORK_WITH_CATEGORIES);
-        System.out.println(MenuString.FILTRATION);
-        System.out.println(MenuString.EXIT_MAIN);
-        System.out.println(MenuString.YOU_CHOOSE);
+     public static void Menu(){
+        System.out.println(MenuString.ADD_PRODUCT + "\n" + MenuString.REMOVE_PRODUCT+ "\n" +FIND_PRODUCT + "\n" +SHOW_ALL_PRODUCT + "\n" +CHANGE_PRODUCT
+                + "\n" +WORK_WITH_CATEGORIES + "\n" +FILTRATION + "\n" +EXIT_MAIN + "\n" + YOU_CHOOSE );
     }
     public static void categoryMenu(){
-        System.out.println(MenuString.ADD_PRODUCT_TO_CATEGORY);
-        System.out.println(MenuString.REMOVE_PRODUCT_FROM_CATEGORY);
-        System.out.println(MenuString.DELETE_CATEGORY);
-        System.out.println(MenuString.SHOW_CATEGORY);
-        System.out.println(MenuString.RETURN_ALL_PRODUCTS_FROM_CATEGORY);
-        System.out.println(MenuString.EXIT_CATEGORY);
+        System.out.println(MenuString.ADD_PRODUCT_TO_CATEGORY + "\n" +REMOVE_PRODUCT_FROM_CATEGORY + "\n" +DELETE_CATEGORY + "\n" +SHOW_CATEGORY
+                + "\n" +RETURN_ALL_PRODUCTS_FROM_CATEGORY + "\n" +EXIT_CATEGORY);
 
     }
 }
