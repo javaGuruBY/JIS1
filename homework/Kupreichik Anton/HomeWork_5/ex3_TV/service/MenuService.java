@@ -40,7 +40,7 @@ public class MenuService {
 
     public static void chooseChannel(){
         if (philips.isSwitchedOnOff() == true) {
-            int currentChanel = -1;                                ;
+            int currentChanel = -1;                                
             while ((currentChanel < 0) | (currentChanel > 100)) {
                 System.out.println(MenuString.CHOOSE_CHANNEL);
                 currentChanel = in.nextInt();
