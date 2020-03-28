@@ -7,15 +7,17 @@ import java.util.List;
 
 public class Library {
 
-    List<Book> libraryList = new ArrayList<>();
+    public List<Book> libraryList = new ArrayList<>();
 
     public void addBook(Book book) {
         libraryList.add(book);
     }
 
     public void removeBook(Book book) {
-        libraryList.remove(book);
-        System.out.println("Deleting " + book.getName() + " completed");
+        if (libraryList.contains(book)) {
+            libraryList.remove(book);
+            System.out.println("Deleting " + book.getName() + " completed");
+        }
     }
 
     public void findBookByName(String name) {
