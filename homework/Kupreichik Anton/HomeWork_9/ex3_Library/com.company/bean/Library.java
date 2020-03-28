@@ -5,7 +5,7 @@ import com.company.bean.Book;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Library {
+public class Library implements Serializible {
     public Library() {    };
 
     public List<Object> library = new ArrayList<>();
