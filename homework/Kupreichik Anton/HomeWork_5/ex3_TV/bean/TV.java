@@ -1,12 +1,13 @@
 package com.company.bean;
 
-public class TV {
+public class TV implements Serialiazible {
 
     private int currentChanel;
     private int currentVolume;
     private String manufacturer;
     private boolean switchedOnOff = false;
 
+    public TV() {};
     public int getCurrentChanel() {
         return currentChanel;
     }
