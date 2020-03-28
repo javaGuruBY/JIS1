@@ -11,7 +11,7 @@ public class MenuService {
     static TV Philips = new TV();
     static TVController tvController = new TVController(Philips);
 
-    static int choose = 0, secondChoose = 0;;
+    static int choose, secondChoose;
 
     public static void enterManufacture(){
         System.out.println("Введите марку телевизора\n");
