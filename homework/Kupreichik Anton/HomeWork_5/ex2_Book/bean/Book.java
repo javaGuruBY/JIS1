@@ -2,7 +2,7 @@ package com.company.bean;
 
 import java.util.Objects;
 
-public class Book {
+public class Book implements Serialiazible{
     private String author;
     private String name;
     private int numberOfPages;
