@@ -5,7 +5,7 @@ import com.company.service.CreditCardService;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class CreditCard extends CreditCardService implements Serializable {
+public class CreditCard implements Serializable {
     private int cardNumber;
     private int pin;
     private double balance;
