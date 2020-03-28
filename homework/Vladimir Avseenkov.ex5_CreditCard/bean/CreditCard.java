@@ -1,6 +1,8 @@
 package bean;
 
-public class CreditCard {
+import java.io.Serializable;
+
+public class CreditCard implements Serializable {
     private String cardNumber;
     private String cardPinCode;
     private double cardBalance = 0;
@@ -9,22 +11,22 @@ public class CreditCard {
 
 
     public void deposit(double summ, String enteredPinCode) {
-        if (this.cardPinCode.equals(enteredPinCode) && !checkDebt()) {
+        if (isPinCodeCorrect(enteredPinCode) && !isDebtPositive()) {
             cardBalance += summ;
-        } else if (this.cardPinCode.equals(enteredPinCode) && checkDebt()) {
-            depositWithDebt(summ);
+        } else if (isPinCodeCorrect(enteredPinCode) && isDebtPositive()) {
+            depositWithDebtBalance(summ);
         } else {
             System.out.println("Operation denied!");
         }
     }
 
-    private void depositWithDebt(double summ) {
+    private void depositWithDebtBalance(double summ) {
         double differenceToDeposit = summ - this.debt;
         this.cardBalance += differenceToDeposit;
         this.debt -= (summ - differenceToDeposit);
     }
 
-    public boolean checkDebt () {
+    public boolean isDebtPositive() {
         return this.debt > 0;
     }
 
@@ -39,14 +41,14 @@ public class CreditCard {
     private void withdrawWithLoan(double summ) {
         double difference = summ - this.cardBalance;
         this.debt += difference;
-        this.cardBalance = this.cardBalance + difference - summ; //should equals Zero
+        this.cardBalance = this.cardBalance + difference - summ;
     }
 
     public void withdraw(double summ, String enteredPinCode) {
         double balanceAndLoanLimit = this.cardBalance + this.loanLimit - this.debt;
-        if (this.cardPinCode.equals(enteredPinCode) && summ <= this.cardBalance) {
+        if (isPinCodeCorrect(enteredPinCode) && summ <= this.cardBalance) {
             this.cardBalance -= summ;
-        } else if (this.cardPinCode.equals(enteredPinCode) && balanceAndLoanLimit >= summ) {
+        } else if (isPinCodeCorrect(enteredPinCode) && balanceAndLoanLimit >= summ) {
             withdrawWithLoan(summ);
         } else {
             System.out.println("Operation denied!");
@@ -67,5 +69,46 @@ public class CreditCard {
                 ", cardBalance = " + cardBalance +
                 ", loanLimit = " + loanLimit +
                 ", debt = " + debt;
+    }
+
+    private boolean isPinCodeCorrect(String enteredPinCode) {
+        if (!this.cardPinCode.equals(enteredPinCode)) {
+            System.out.println("Incorrect PIN-Code");
+            return false;
+        } else {
+            return this.cardPinCode.equals(enteredPinCode);
+        }
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    private void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    private String getCardPinCode() {
+        return cardPinCode;
+    }
+
+    private void setCardPinCode(String cardPinCode) {
+        this.cardPinCode = cardPinCode;
+    }
+
+    public double getCardBalance() {
+        return cardBalance;
+    }
+
+    private void setCardBalance(double cardBalance) {
+        this.cardBalance = cardBalance;
+    }
+
+    public double getDebt() {
+        return debt;
+    }
+
+    private void setDebt(double debt) {
+        this.debt = debt;
     }
 }
