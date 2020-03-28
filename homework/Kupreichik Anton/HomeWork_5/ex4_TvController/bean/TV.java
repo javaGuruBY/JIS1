@@ -5,11 +5,20 @@ import com.company.service.TvService;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class TV extends TvService implements Serializable {
+public class TV implements Serializable {
     private int currentChanel;
     private int currentVolume;
     private String manufacturer;
     private boolean switchedOnOff = false;
+    
+    public TV() { };
+    
+    public TV(int currentChanel, int currentVolume, String manufacturer, boolean switchadOnOff){
+        this.currentChanel =  currentChanel;
+        this.currentVolume =  currentVolume;
+        this.manufacturer =  manufacturer;
+        this.switchedOnOff = switchedOnOff;
+    }
 
     public int getCurrentChanel() {
         return currentChanel;
