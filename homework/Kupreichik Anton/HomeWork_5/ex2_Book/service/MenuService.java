@@ -18,7 +18,7 @@ public class MenuService {
     }
 
     public static void enterData(){
-        for (int i = 0; i < numberOfBooks; i += 1) {
+        for (int i = 0; i < numberOfBooks; i++) {
             book[i] = new Book(i);
             System.out.println("Введите название для книги");
             name = in.nextLine();
