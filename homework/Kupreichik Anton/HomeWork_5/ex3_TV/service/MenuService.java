@@ -8,20 +8,20 @@ import java.util.Scanner;
 public class MenuService {
     static Scanner in = new Scanner(System.in);
     static TvService tvService = new TvService();
-    static TV Philips = new TV();
+    static TV philips = new TV();
 
-    static int choose = 0;
+    static int choose;
 
     public static void enterName(){
         System.out.println(MenuString.ENTER_NAME);
         String manufacturer;
         manufacturer = in.nextLine();
         manufacturer = in.nextLine();
-        Philips.setManufacturer(manufacturer);
+        philips.setManufacturer(manufacturer);
     }
 
     public static void onTv(){
-        if (Philips.isSwitchedOnOff() == false) {
+        if (philips.isSwitchedOnOff() == false) {
             System.out.println(MenuString.TV_ON);
             tvService.SwitchedOn();
         } else {
@@ -30,7 +30,7 @@ public class MenuService {
     }
 
     public static void offTv(){
-        if (Philips.isSwitchedOnOff() == true) {
+        if (philips.isSwitchedOnOff() == true) {
             System.out.println(MenuString.TV_OFF);
             tvService.SwitchedOff();
         } else {
@@ -39,7 +39,7 @@ public class MenuService {
     }
 
     public static void chooseChannel(){
-        if (Philips.isSwitchedOnOff() == true) {
+        if (philips.isSwitchedOnOff() == true) {
             int currentChanel = -1;                                ;
             while ((currentChanel < 0) | (currentChanel > 100)) {
                 System.out.println(MenuString.CHOOSE_CHANNEL);
@@ -47,7 +47,7 @@ public class MenuService {
                 if ((currentChanel < 0) | (currentChanel > 100)) {
                     System.out.println(MenuString.ERROR);
                 } else {
-                    Philips.setCurrentChanel(currentChanel);
+                    philips.setCurrentChanel(currentChanel);
                 }
             } }else{
             System.out.println(MenuString.YOU_CANT_INCREASE_CHANNEL);
@@ -55,50 +55,50 @@ public class MenuService {
     }
 
     public static void increaseChannel(){
-        if (Philips.isSwitchedOnOff() == true) {
+        if (philips.isSwitchedOnOff() == true) {
             System.out.println(MenuString.INCREASE_CHANNEL);
             tvService.currentChanelIncrease();
-            System.out.println(MenuString.CURRENT_CHANNEL + Philips.getCurrentChanel());
+            System.out.println(MenuString.CURRENT_CHANNEL + philips.getCurrentChanel());
         } else {
             System.out.println(MenuString.YOU_CANT_INCREASE_CHANNEL);
         }
     }
 
     public static void reduceChannel(){
-        if (Philips.isSwitchedOnOff() == true) {
+        if (philips.isSwitchedOnOff() == true) {
             System.out.println(MenuString.REDUCE_CHANNEL);
             tvService.currentChanelReduce();
-            System.out.println(MenuString.CURRENT_CHANNEL + Philips.getCurrentChanel());
+            System.out.println(MenuString.CURRENT_CHANNEL + philips.getCurrentChanel());
         } else {
             System.out.println(MenuString.YOU_CANT_INCREASE_CHANNEL);
         }
     }
 
     public static void increaseVolume(){
-        if (Philips.isSwitchedOnOff() == true) {
+        if (philips.isSwitchedOnOff() == true) {
             tvService.currentVolumeIncrease();
-            System.out.println(MenuString.CURRENT_VOLUME + Philips.getCurrentVolume());
+            System.out.println(MenuString.CURRENT_VOLUME + philips.getCurrentVolume());
         } else {
             System.out.println(MenuString.YOU_CANT_INCREASE_VOLUME);
         }
     }
 
     public static void reduceVolume(){
-        if (Philips.isSwitchedOnOff() == true) {
+        if (philips.isSwitchedOnOff() == true) {
             tvService.currentVolumeReduce();
-            System.out.println(MenuString.CURRENT_VOLUME + Philips.getCurrentVolume());
+            System.out.println(MenuString.CURRENT_VOLUME + philips.getCurrentVolume());
         }else {
             System.out.println(MenuString.YOU_CANT_INCREASE_VOLUME);
         }
     }
 
     public static void info(){
-        System.out.println(MenuString.MANUFACTURER +Philips.getManufacturer());
-        if(Philips.isSwitchedOnOff())
+        System.out.println(MenuString.MANUFACTURER +philips.getManufacturer());
+        if(philips.isSwitchedOnOff())
             System.out.println(MenuString.TV_ON);
         else System.out.println(MenuString.TV_OFF);
-        System.out.println(MenuString.CURRENT_VOLUME + Philips.getCurrentVolume());
-        System.out.println(MenuString.CHOOSE_CHANNEL + Philips.getCurrentChanel());
+        System.out.println(MenuString.CURRENT_VOLUME + philips.getCurrentVolume());
+        System.out.println(MenuString.CHOOSE_CHANNEL + philips.getCurrentChanel());
     }
 
     public static void menu(){
