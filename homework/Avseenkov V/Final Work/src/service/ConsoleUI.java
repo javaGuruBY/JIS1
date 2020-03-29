@@ -49,14 +49,17 @@ public class ConsoleUI {
         switch (userSelect()) {
             case 1:
                 service.setItem(new Product()); //ТУДУ добавить ввод пользователем продукта
+                returnToMainMenu();
                 break;
             case 2:
                 System.out.println(ID_INPUT);
                 service.getProductById((long) userSelect());
+                returnToMainMenu();
                 break;
             case 3:
                 for (Product product : service.getListOfProducts()) {
                     System.out.println(product);
+                    returnToMainMenu();
                 }
                 break;
             case 4:
@@ -65,7 +68,12 @@ public class ConsoleUI {
                 break;
             default:
                 System.out.println(INCORRECT_MENU_SELECT);
-                mainMenu();
+                returnToMainMenu();
         }
+    }
+
+    private void returnToMainMenu(){
+        System.out.println("====================================================================");
+        mainMenu();
     }
 }
