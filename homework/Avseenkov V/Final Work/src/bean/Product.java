@@ -7,6 +7,7 @@ import java.util.Objects;
 public class Product implements Serializable {
     private String name;
     private Long id;
+    private static long nextId = 0;
     private BigDecimal price;
     private Enum category;
     private BigDecimal discount;
@@ -16,6 +17,8 @@ public class Product implements Serializable {
     }
 
     public Product(String name, BigDecimal price, Enum category) {
+        this.id = nextId;
+        nextId++;
         this.name = name;
         this.price = price;
         this.category = category;
