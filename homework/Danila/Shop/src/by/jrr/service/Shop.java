@@ -13,8 +13,6 @@ public class Shop implements ShopInterface {
     public List<Product> product = new LinkedList<>();
 
     public Shop() {
-        product.add(new Product("Milk", new BigDecimal(3.25)));
-        product.add(new Product("Apple", new BigDecimal(1.25)));
     }
 
     @Override
