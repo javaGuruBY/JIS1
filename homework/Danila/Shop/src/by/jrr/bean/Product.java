@@ -5,11 +5,11 @@ import java.util.Objects;
 
 public class Product {
     private String nameProduct;
-    private BigDecimal bigDecimal;
+    private BigDecimal priceOfProduct;
 
-    public Product(String nameProduct, BigDecimal bigDecimal) {
+    public Product(String nameProduct, BigDecimal priceOfProduct) {
         this.nameProduct = nameProduct;
-        this.bigDecimal = bigDecimal;
+        this.priceOfProduct = priceOfProduct;
     }
 
     public String getNameProduct() {
@@ -20,12 +20,12 @@ public class Product {
         this.nameProduct = nameProduct;
     }
 
-    public BigDecimal getBigDecimal() {
-        return bigDecimal;
+    public BigDecimal getPriceOfProduct() {
+        return priceOfProduct;
     }
 
-    public void setBigDecimal(BigDecimal bigDecimal) {
-        this.bigDecimal = bigDecimal;
+    public void setPriceOfProduct(BigDecimal priceOfProduct) {
+        this.priceOfProduct = priceOfProduct;
     }
 
     @Override
@@ -34,19 +34,19 @@ public class Product {
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
         return Objects.equals(nameProduct, product.nameProduct) &&
-                Objects.equals(bigDecimal, product.bigDecimal);
+                Objects.equals(priceOfProduct, product.priceOfProduct);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nameProduct, bigDecimal);
+        return Objects.hash(nameProduct, priceOfProduct);
     }
 
     @Override
     public String toString() {
         return "Product{" +
                 "nameProduct='" + nameProduct + '\'' +
-                ", bigDecimal=" + bigDecimal +
+                ", priceOfProduct=" + priceOfProduct +
                 '}';
     }
 }
