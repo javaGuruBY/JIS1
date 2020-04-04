@@ -1,6 +1,6 @@
 package service;
 
-import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 
 public class ArrayService {
@@ -36,5 +36,20 @@ public class ArrayService {
             return 0;
         }
         return (double) sum(array) / array.length;
+    }
+
+    public int[] sort(int[] array) {
+        Arrays.sort(array);
+        return array;
+    }
+
+    public int[] swap(int[] array) {
+        int temporaryInt;
+        for (int inc = 0, dec = array.length-1; inc < (array.length / 2); inc++, dec--) {
+            temporaryInt = array[inc];
+            array[inc] = array[dec];
+            array[dec] = temporaryInt;
+        }
+        return array;
     }
 }
