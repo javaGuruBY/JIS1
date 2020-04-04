@@ -7,7 +7,7 @@ public class TV implements Serializable {
     public int currentChannel;
     public int currentVoice;
     public String manufacturer;
-    public boolean TVIsOn;
+    public boolean tvIsOn;
 
     public TV() {
         TVIsOn = false;
