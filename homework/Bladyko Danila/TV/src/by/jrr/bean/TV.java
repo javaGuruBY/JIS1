@@ -1,4 +1,4 @@
-package by.jrr.tv;
+package by.jrr.bean;
 
 import java.util.Objects;
 
