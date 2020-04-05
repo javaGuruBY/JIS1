@@ -15,7 +15,7 @@ public class LibraryTest {
     public void testShouldReturnNewCountOfBooks() throws Exception {
         library.addBookToLibrary(book2);
         int expectedResult = library.getSize();
-        int actualResult = 1;
+        int actualResult = 2;
 
         assertEqualsInteger(expectedResult, actualResult, "testShouldReturnNewCountOfBooks");
     }
