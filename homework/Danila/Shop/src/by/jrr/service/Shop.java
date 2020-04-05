@@ -36,7 +36,7 @@ public class Shop implements ShopInterface {
     }
 
     @Override
-    public void findProduct(BigDecimal minPriceRange, BigDecimal maxPriceRange) {
+    public void findProductAtAPriceInRange(BigDecimal minPriceRange, BigDecimal maxPriceRange) {
         for (Product entry: product) {
             if(entry.getBigDecimal().compareTo(minPriceRange) >= 0 && entry.getBigDecimal().compareTo(maxPriceRange) <= 0) {
                 System.out.println(entry.toString());
