@@ -9,5 +9,5 @@ public interface ShopInterface {
     void setProduct(Product newProduct);
     void deleteProduct(Product name);
     Product findProductByName(String name);
-    void findProduct(BigDecimal minPriceRange, BigDecimal maxPriceRange);
+    void findProductAtAPriceInRange(BigDecimal minPriceRange, BigDecimal maxPriceRange);
 }
