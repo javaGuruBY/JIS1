@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.vladis1350.FinalProjectJavaOneApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 64.772 s <<< FAILURE! - in com.vladis1350.FinalProjectJavaOneApplicationTests
+testShouldReturnProductById  Time elapsed: 0.226 s  <<< ERROR!
+java.util.NoSuchElementException: No value present
+	at com.vladis1350.FinalProjectJavaOneApplicationTests.testShouldReturnProductById(FinalProjectJavaOneApplicationTests.java:56)
+
+testShouldReturnProductByCategory  Time elapsed: 3.448 s  <<< FAILURE!
+java.lang.AssertionError: expected:<3> but was:<1>
+	at com.vladis1350.FinalProjectJavaOneApplicationTests.testShouldReturnProductByCategory(FinalProjectJavaOneApplicationTests.java:64)
+

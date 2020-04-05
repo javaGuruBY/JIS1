@@ -1,0 +1,10 @@
+com\vladis1350\services\ProductService.class
+com\vladis1350\FinalProjectJavaOneApplication.class
+com\vladis1350\repositories\CategoryRepository.class
+com\vladis1350\messages\MessageException.class
+com\vladis1350\bean\Product.class
+com\vladis1350\bean\Category.class
+com\vladis1350\validate\ProductValidator.class
+com\vladis1350\controllers\ProductServiceController.class
+com\vladis1350\services\CategoryService.class
+com\vladis1350\repositories\ProductRepository.class
