@@ -1,40 +1,49 @@
 package com.company.service;
 
 import com.company.bean.Book;
-import com.company.bean.Library;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class LibaryService {
-    Library library = new Library();
+import static com.company.bean.Book.booksMap;
+import static com.company.bean.Library.libraryMap;
+
+public class LibraryService {
 
     public void addBookToLibrary(Book book) {
-        library.library.add(book);
+        libraryMap.add(book);
+        System.out.println("Книга добавлена!");
     }
 
-    public int getSize(){
-        return library.library.size();
+    public int getSize() {
+        System.out.print("Кол-тво книг в библиотеке =");
+        return libraryMap.size();
     }
+
     public void deleteBookFromLibrary(Book book) {
-        library.library.remove(book);
+        libraryMap.remove(book);
+        System.out.println("Книга удалена!");
     }
 
-    public void findBookByName(String name) {
-        List<Book> searchResult = new ArrayList<>();
-        for (int i = 0; i < library.library.size() ; i++) {
-            if(library.library.get(i).equals(name)){
-                searchResult.add((Book) library.library.get(i));
+    public void findBookByAuthor(String authorBook) {
+        Collection<String> collection = booksMap.keySet();
+        for (String key : collection) {
+            Object obj = booksMap.get(key);
+            if (key != null) {
+                if (authorBook.equals(obj)) {
+                    System.out.print(key + " ");
+                }
             }
         }
     }
 
-    public void returnBookWithAuthor(Book book) {
-        book.library.stream().forEach(System.out::println);
+    public void findBookByName(String name) {
+        System.out.println(booksMap.get(name));
     }
 
     public void returnAllBook() {
-        library.library.stream().forEach(System.out::println);
+        libraryMap.toString();
     }
 
 }
