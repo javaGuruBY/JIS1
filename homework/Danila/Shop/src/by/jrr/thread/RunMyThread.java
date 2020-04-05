@@ -13,7 +13,7 @@ public class RunMyThread implements Runnable {
 
         System.out.println(shop.findProductByName("Chocolate"));
         
-        shop.findProduct(new BigDecimal(1.1), new BigDecimal(3.25));
+        shop.findProductAtAPriceInRange(new BigDecimal(1.1), new BigDecimal(3.25));
     }
 
 }
