@@ -31,6 +31,7 @@ public class ConsoleUI {
         mainMenuList.add(ITEM_2);
         mainMenuList.add(ITEM_3);
         mainMenuList.add(ITEM_4);
+        mainMenuList.add(ITEM_0);
     }
 
     private void printMainMenuList() {
@@ -65,6 +66,8 @@ public class ConsoleUI {
             case 4:
                 System.out.println(ID_INPUT);
                 service.removeItemById((long) userSelect());
+                break;
+            case 0:
                 break;
             default:
                 System.out.println(INCORRECT_MENU_SELECT);
