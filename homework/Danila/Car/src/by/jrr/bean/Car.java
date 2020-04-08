@@ -23,6 +23,7 @@ public class Car {
         }
         int speedDifference = targetSpeed - this.currentSpeed;
 
+
         for(int i = 0; i < speedDifference; i++) {
             if(currentSpeed == maxSpeed) {
                 break;
