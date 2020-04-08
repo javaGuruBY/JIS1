@@ -1,5 +1,6 @@
 package by.jrr.test;
 
+
 import by.jrr.bean.Book;
 
 public class BookDemo {

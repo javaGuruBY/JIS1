@@ -8,3 +8,4 @@ public class BookRunTest {
         bookTest.testShouldWriteTrue();
     }
 }
+
