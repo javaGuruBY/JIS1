@@ -17,7 +17,7 @@ import static stat.Messages.*;
 
 public class ConsoleUI {
     List<String> mainMenuList = new ArrayList<>();
-    ProductService service;
+    ProductService service = new ProductService();
 
     public void mainMenu() {
         System.out.println("Главное меню");
