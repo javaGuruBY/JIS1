@@ -6,6 +6,6 @@ public class MainThread implements Runnable{
     @Override
     public void run() {
         ConsoleUI start = new ConsoleUI();
-        start.mainMenu();
+        start.startConsoleUI();
     }
 }

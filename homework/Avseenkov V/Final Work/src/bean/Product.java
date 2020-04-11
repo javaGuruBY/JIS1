@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Product implements Serializable {
     private String name;
-    private Long id;
+    private Long id; //todo use atomic long
     private static long nextId = 0;
     private BigDecimal price;
     private Enum category;

@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface ProductInterface {
-    void setItem(Product product);
+    void setItem();
     void editItemPrice(Long id, BigDecimal newPrice);
     void setItemDiscount(Long id, BigDecimal newDiscount);
     void editItemDescription(Long id, String description);

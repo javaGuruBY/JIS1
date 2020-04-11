@@ -3,6 +3,7 @@ package service;
 import bean.Product;
 import interfaces.ProductInterface;
 import stat.Messages;
+import static service.UserInput.*;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -11,11 +12,17 @@ import static database.InMemoryDataBase.dataBase;
 
 public class ProductService implements ProductInterface {
     @Override
-    public void setItem(Product product) {
-        if (product.getName() == null) {
-            System.out.println(Messages.INCORRECT_NAME);
-        } else {
+    public void setItem() {
+        System.out.print("Введите имя продукта: ");
+        String name = userInputString();
+        System.out.print("Введите цену продукта: ");
+        BigDecimal price = userInputBigDecimal();
+        System.out.print("Введите категорию продукта: ");
+        Enum category = userInputEnum();
+        Product product = new Product(name, price, category);
+        if (checkCorrectUserInput(product)) {
             dataBase.add(product);
+            System.out.println(Messages.PRODUCT_ADDED);
         }
     }
 
@@ -58,5 +65,17 @@ public class ProductService implements ProductInterface {
     @Override
     public List<Product> getListOfProducts() {
         return dataBase;
+    }
+
+    private boolean checkCorrectUserInput (Product product) {
+        if (product.getName() == null) {
+            System.out.println(Messages.INCORRECT_NAME);
+            return false;
+        } else if (product.getPrice().compareTo(BigDecimal.valueOf(0)) < 0) {
+            System.out.println(Messages.INCORRECT_PRICE);
+            return false;
+        } else {
+            return true;
+        }
     }
 }

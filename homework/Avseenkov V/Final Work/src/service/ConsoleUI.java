@@ -4,10 +4,11 @@ import bean.Product;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
+import static service.UserInput.*;
 import static stat.MainMenu.*;
-import static stat.Messages.*;
+import static stat.Messages.ID_INPUT;
+import static stat.Messages.INCORRECT_MENU_SELECT;
 
 /**
  * Тут  есть чего ещё сделать
@@ -19,11 +20,15 @@ public class ConsoleUI {
     List<String> mainMenuList = new ArrayList<>();
     ProductService service = new ProductService();
 
+    public void startConsoleUI() {
+        setMainMenuList();
+        mainMenu();
+    }
+
     public void mainMenu() {
         System.out.println("Главное меню");
-        setMainMenuList();
         printMainMenuList();
-        toDoAfterUserSelect();
+        executeAfterUserSelect();
     }
 
     private void setMainMenuList() {
@@ -40,21 +45,15 @@ public class ConsoleUI {
         }
     }
 
-    private int userSelect() {
-        Scanner input;
-        input = new Scanner(System.in);
-        return input.nextInt();
-    }
-
-    private void toDoAfterUserSelect() {
-        switch (userSelect()) {
+    private void executeAfterUserSelect() {
+        switch (userInputInteger()) {
             case 1:
-                service.setItem(new Product()); //ТУДУ добавить ввод пользователем продукта
+                service.setItem();
                 returnToMainMenu();
                 break;
             case 2:
                 System.out.println(ID_INPUT);
-                service.getProductById((long) userSelect());
+                service.getProductById((long) userInputInteger());
                 returnToMainMenu();
                 break;
             case 3:
@@ -65,18 +64,18 @@ public class ConsoleUI {
                 break;
             case 4:
                 System.out.println(ID_INPUT);
-                service.removeItemById((long) userSelect());
+                service.removeItemById((long) userInputInteger());
                 break;
             case 0:
                 break;
             default:
-                System.out.println(INCORRECT_MENU_SELECT);
+                System.err.println(INCORRECT_MENU_SELECT);
                 returnToMainMenu();
         }
     }
 
     private void returnToMainMenu(){
-        System.out.println("====================================================================");
+        System.out.println("\n===================================================================");
         mainMenu();
     }
 }
