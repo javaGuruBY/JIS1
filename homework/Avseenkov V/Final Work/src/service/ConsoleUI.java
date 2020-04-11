@@ -10,12 +10,6 @@ import static stat.MainMenu.*;
 import static stat.Messages.ID_INPUT;
 import static stat.Messages.INCORRECT_MENU_SELECT;
 
-/**
- * Тут  есть чего ещё сделать
- * Смотри комментарии
- * По завершению - удали
- */
-
 public class ConsoleUI {
     List<String> mainMenuList = new ArrayList<>();
     ProductService service = new ProductService();
@@ -60,7 +54,6 @@ public class ConsoleUI {
                 System.out.println("Всего продуктов в базе: " + service.getListOfProducts().size());
                 service.getListOfProducts().forEach(System.out::println);
                 returnToMainMenu();
-
                 break;
             case 4:
                 System.out.println(ID_INPUT);
