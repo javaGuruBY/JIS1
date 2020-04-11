@@ -13,16 +13,10 @@ import static database.InMemoryDataBase.dataBase;
 public class ProductService implements ProductInterface {
     @Override
     public void setItem() {
-        System.out.print("Введите имя продукта: ");
-        String name = userInputString();
-        System.out.print("Введите цену продукта: ");
-        BigDecimal price = userInputBigDecimal();
-        System.out.print("Введите категорию продукта: ");
-        Enum category = userInputEnum();
-        Product product = new Product(name, price, category);
+        Product product = new Product(userInputName(), userInputBigDecimalPrice(), userInputEnum());
         if (checkCorrectUserInput(product)) {
             dataBase.add(product);
-            System.out.println(Messages.PRODUCT_ADDED);
+            System.out.println("\n" + Messages.PRODUCT_ADDED);
         }
     }
 
