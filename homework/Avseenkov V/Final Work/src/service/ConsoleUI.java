@@ -57,10 +57,10 @@ public class ConsoleUI {
                 returnToMainMenu();
                 break;
             case 3:
-                for (Product product : service.getListOfProducts()) {
-                    System.out.println(product);
-                    returnToMainMenu();
-                }
+                System.out.println("Всего продуктов в базе: " + service.getListOfProducts().size());
+                service.getListOfProducts().forEach(System.out::println);
+                returnToMainMenu();
+
                 break;
             case 4:
                 System.out.println(ID_INPUT);
@@ -74,7 +74,7 @@ public class ConsoleUI {
         }
     }
 
-    private void returnToMainMenu(){
+    private void returnToMainMenu() {
         System.out.println("\n===================================================================");
         mainMenu();
     }
