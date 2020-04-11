@@ -3,6 +3,7 @@ package service;
 import bean.Product;
 import interfaces.ProductInterface;
 import stat.Messages;
+
 import static service.UserInput.*;
 
 import java.math.BigDecimal;
@@ -22,16 +23,20 @@ public class ProductService implements ProductInterface {
 
     @Override
     public void editItemPrice(Long id, BigDecimal newPrice) {
-        dataBase.stream()
-                .filter(i -> i.getId().equals(id))
-                .forEach(i -> i.setPrice(newPrice));
+        if (checkIfExistID(id)) {
+            dataBase.stream()
+                    .filter(i -> i.getId().equals(id))
+                    .forEach(i -> i.setPrice(newPrice));
+        }
     }
 
     @Override
     public void setItemDiscount(Long id, BigDecimal newDiscount) {
-        dataBase.stream()
-                .filter(i -> i.getId().equals(id))
-                .forEach(i -> i.setDiscount(newDiscount));
+        if (checkIfExistID(id)) {
+            dataBase.stream()
+                    .filter(i -> i.getId().equals(id))
+                    .forEach(i -> i.setDiscount(newDiscount));
+        }
     }
 
     @Override
@@ -43,14 +48,19 @@ public class ProductService implements ProductInterface {
 
     @Override
     public void removeItemById(Long id) {
-        dataBase.removeIf(entry -> entry.getId().compareTo(id) == 0);
+        if (checkIfExistID(id)) {
+            dataBase.removeIf(entry -> entry.getId().compareTo(id) == 0);
+            System.out.println(Messages.SUCSESSFULLY_REMOVED);
+        }
     }
 
     @Override
     public Product getProductById(Long id) {
         for (Product item : dataBase) {
             if (item.getId().compareTo(id) == 0) {
-                return item;
+                if (item != null) {
+                    return item;
+                }
             }
         }
         return null;
@@ -61,7 +71,7 @@ public class ProductService implements ProductInterface {
         return dataBase;
     }
 
-    private boolean checkCorrectUserInput (Product product) {
+    private boolean checkCorrectUserInput(Product product) {
         if (product.getName() == null) {
             System.out.println(Messages.INCORRECT_NAME);
             return false;
@@ -70,6 +80,15 @@ public class ProductService implements ProductInterface {
             return false;
         } else {
             return true;
+        }
+    }
+
+    boolean checkIfExistID(Long id) {
+        if (dataBase.stream().anyMatch(entry -> entry.getId().compareTo(id) == 0)) {
+            return true;
+        } else {
+            System.err.println(Messages.NO_ITEM);
+            return false;
         }
     }
 }

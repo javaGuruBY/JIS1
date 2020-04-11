@@ -1,6 +1,7 @@
 package service;
 
 import bean.Product;
+import stat.Messages;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,16 +27,21 @@ public class ConsoleUI {
     }
 
     private void setMainMenuList() {
+        mainMenuList.add(ITEM_0);
         mainMenuList.add(ITEM_1);
         mainMenuList.add(ITEM_2);
         mainMenuList.add(ITEM_3);
         mainMenuList.add(ITEM_4);
-        mainMenuList.add(ITEM_0);
+        mainMenuList.add(ITEM_5);
+        mainMenuList.add(ITEM_6);
+
     }
 
     private void printMainMenuList() {
+        int menuItemNumber = 0;
         for (String i : mainMenuList) {
-            System.out.println(i);
+            System.out.println(menuItemNumber + ". " + i);
+            menuItemNumber++;
         }
     }
 
@@ -44,21 +50,26 @@ public class ConsoleUI {
             case 1:
                 service.setItem();
                 returnToMainMenu();
-                break;
             case 2:
-                System.out.println(ID_INPUT);
-                service.getProductById((long) userInputInteger());
+                System.out.print(ID_INPUT);
+                System.out.println(service.getProductById((long) userInputInteger()));
                 returnToMainMenu();
-                break;
             case 3:
                 System.out.println("Всего продуктов в базе: " + service.getListOfProducts().size());
                 service.getListOfProducts().forEach(System.out::println);
                 returnToMainMenu();
-                break;
             case 4:
-                System.out.println(ID_INPUT);
+                System.out.println(Messages.ID_INPUT);
                 service.removeItemById((long) userInputInteger());
-                break;
+                returnToMainMenu();
+            case 5:
+                System.out.println(Messages.ID_INPUT);
+                service.editItemPrice((long) userInputInteger(), userInputBigDecimalPrice());
+                returnToMainMenu();
+            case 6:
+                System.out.println(ID_INPUT);
+                service.setItemDiscount((long) userInputInteger(), userInputBigDecimalDiscount());
+                returnToMainMenu();
             case 0:
                 break;
             default:

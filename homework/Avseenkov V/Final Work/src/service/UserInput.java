@@ -1,28 +1,35 @@
 package service;
 
 import bean.Category;
+import stat.Messages;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class UserInput {
-    static Scanner input;
+    static Scanner scanner;
 
     static int userInputInteger() {
-        input = new Scanner(System.in);
-        return input.nextInt();
+        scanner = new Scanner(System.in);
+        return scanner.nextInt();
     }
 
     static String userInputName() {
         System.out.print("Введите имя продукта: ");
-        input = new Scanner(System.in);
-        return input.nextLine();
+        scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
 
     static BigDecimal userInputBigDecimalPrice() {
         System.out.print("Введите цену продукта: ");
-        input = new Scanner(System.in);
-        return input.nextBigDecimal();
+        scanner = new Scanner(System.in);
+        return scanner.nextBigDecimal();
+    }
+
+    static BigDecimal userInputBigDecimalDiscount() {
+        System.out.print("Введите скидку на продукт: ");
+        scanner = new Scanner(System.in);
+        return scanner.nextBigDecimal();
     }
 
     static Enum userInputEnum() {
