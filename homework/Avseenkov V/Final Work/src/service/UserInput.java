@@ -21,7 +21,7 @@ public class UserInput {
     }
 
     public static BigDecimal userInputBigDecimalPrice() {
-        System.out.print(Messages.INCORRECT_PRICE);
+        System.out.print(Messages.INPUT_PRICE);
         scanner = new Scanner(System.in);
         return scanner.nextBigDecimal();
     }

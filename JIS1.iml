@@ -2,7 +2,13 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/homework/Avseenkov V/HomeWork9/Ex3_Library" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/homework/Avseenkov V/HomeWork10/Ex2_SimpleDB" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/homework/Avseenkov V/HomeWork11/UserService" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/homework/Avseenkov V/Final Work/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/homework/Avseenkov V/Final Work/test" isTestSource="true" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

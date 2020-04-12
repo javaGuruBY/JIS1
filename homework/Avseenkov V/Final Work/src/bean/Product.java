@@ -3,14 +3,14 @@ package bean;
 import stat.Messages;
 
 import java.io.Serializable;
-import java.lang.reflect.Member;
 import java.math.BigDecimal;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class Product implements Serializable {
     private String name;
     private Long id; //todo use atomic long
-    private static long nextId = 0;
+    private static AtomicLong globalID = new AtomicLong(0);
     private BigDecimal price;
     private Enum category;
     private BigDecimal discount;
@@ -21,8 +21,7 @@ public class Product implements Serializable {
     }
 
     public Product(String name, BigDecimal price, Enum category) {
-        this.id = nextId;
-        nextId++;
+        this.id = globalID.incrementAndGet();
         this.name = name;
         this.price = price;
         this.category = category;
