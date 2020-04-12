@@ -1,6 +1,6 @@
 package thread;
 
-import service.ConsoleUI;
+import userInterface.ConsoleUI;
 
 public class MainThread implements Runnable{
     @Override

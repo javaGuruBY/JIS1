@@ -1,5 +1,6 @@
-package service;
+package userInterface;
 
+import service.ProductService;
 import stat.Messages;
 
 import java.util.ArrayList;

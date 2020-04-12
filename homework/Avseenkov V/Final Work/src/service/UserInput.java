@@ -9,25 +9,25 @@ import java.util.Scanner;
 public class UserInput {
     static Scanner scanner;
 
-    static int userInputInteger() {
+    public static int userInputInteger() {
         scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
 
     static String userInputName() {
-        System.out.print("Введите имя продукта: ");
+        System.out.print(Messages.INPUT_NAME);
         scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
 
-    static BigDecimal userInputBigDecimalPrice() {
-        System.out.print("Введите цену продукта: ");
+    public static BigDecimal userInputBigDecimalPrice() {
+        System.out.print(Messages.INCORRECT_PRICE);
         scanner = new Scanner(System.in);
         return scanner.nextBigDecimal();
     }
 
-    static BigDecimal userInputBigDecimalDiscount() {
-        System.out.print("Введите скидку на продукт: ");
+    public static BigDecimal userInputBigDecimalDiscount() {
+        System.out.print(Messages.INPUT_DISCOUNT);
         scanner = new Scanner(System.in);
         return scanner.nextBigDecimal();
     }
@@ -37,7 +37,7 @@ public class UserInput {
        return Category.OTHER; //TODO допилить работу с вводом категории
     }
 
-    static String userInputDescription() {
+    public static String userInputDescription() {
         System.out.println(Messages.INPUT_DESCRIPTION);
         scanner = new Scanner(System.in);
         return scanner.nextLine();

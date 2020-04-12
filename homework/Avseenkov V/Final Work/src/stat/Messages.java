@@ -10,6 +10,10 @@ public class Messages {
     public static final String NO_ITEM = "Нет такого ID";
     public static final String SUCCESSFULLY_REMOVED = "Удаление завершено.";
     public static final String DUPLICATE = "Продукт с таким именем уже существует";
-    public static final String INPUT_DESCRIPTION = "Введите описание продукта";
-    public static final String INPUT_CATEGORY = "Введите категорию продукта";
+    public static final String INPUT_DESCRIPTION = "Введите описание продукта ";
+    public static final String INPUT_CATEGORY = "Введите категорию продукта ";
+    public static final String INPUT_PRICE = "Введите цену продукта ";
+    public static final String INPUT_NAME = "Введите название продукта ";
+    public static final String INPUT_DISCOUNT = "Введите величину скидки в % ";
+
 }
