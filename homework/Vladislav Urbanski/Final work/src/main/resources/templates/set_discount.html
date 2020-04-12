@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="header :: head"
+      th:with="title='Set Discount'"/>
+<link rel="stylesheet" th:href="@{/styles/style.css}"/>
+<body>
+    <div align="center">
+        <h1>Set Discount for Category products</h1>
+        <br/>
+        <form action="#" th:action="@{/setDiscount}" th:object="${product}" method="post">
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Category:</td>
+                    <td>
+                        <select th:field="*{category}">
+                            <option th:each="category : ${categories}"
+                                    th:value="${category.nameCategory}"
+                                    th:text="${category.nameCategory}">
+                             </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Discount:</td>
+                    <td><input type="text" th:field="*{discount}"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit">Save</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
