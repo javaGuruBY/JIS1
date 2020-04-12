@@ -28,7 +28,7 @@ public class ValidationService {
         }
     }
 
-    static boolean checkCorrectUserInput(Product product) {
+    static boolean checkCorrectUserInputProduct(Product product) {
         if (product.getName() == null) {
             System.err.println(Messages.INCORRECT_NAME);
             return false;

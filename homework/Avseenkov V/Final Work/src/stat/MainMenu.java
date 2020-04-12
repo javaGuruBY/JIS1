@@ -8,6 +8,6 @@ public class MainMenu {
     public static final String ITEM_4 = "Удалить продукт по ID";
     public static final String ITEM_5 = "Найти и изменить цену продукта";
     public static final String ITEM_6 = "Установить скидку на продукт";
-    public static final String ITEM_7 = "";
+    public static final String ITEM_7 = "Добавить описание продукта";
     public static final String ITEM_8 = "";
 }

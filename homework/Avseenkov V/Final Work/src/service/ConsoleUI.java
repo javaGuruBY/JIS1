@@ -1,6 +1,5 @@
 package service;
 
-import bean.Product;
 import stat.Messages;
 
 import java.util.ArrayList;
@@ -34,6 +33,7 @@ public class ConsoleUI {
         mainMenuList.add(ITEM_4);
         mainMenuList.add(ITEM_5);
         mainMenuList.add(ITEM_6);
+        mainMenuList.add(ITEM_7);
 
     }
 
@@ -69,6 +69,10 @@ public class ConsoleUI {
             case 6:
                 System.out.println(ID_INPUT);
                 service.setItemDiscount((long) userInputInteger(), userInputBigDecimalDiscount());
+                returnToMainMenu();
+            case 7:
+                System.out.println(ID_INPUT);
+                service.editItemDescription((long) userInputInteger(), userInputDescription());
                 returnToMainMenu();
             case 0:
                 break;

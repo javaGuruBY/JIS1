@@ -16,7 +16,7 @@ public class ProductService implements ProductInterface {
     @Override
     public void setItem() {
         Product product = new Product(userInputName(), userInputBigDecimalPrice(), userInputEnum());
-        if (checkCorrectUserInput(product) && checkForDuplicates(product.getName())) {
+        if (checkCorrectUserInputProduct(product) && checkForDuplicates(product.getName())) {
             dataBase.add(product);
             System.out.println("\n" + Messages.PRODUCT_ADDED);
         }
@@ -53,7 +53,7 @@ public class ProductService implements ProductInterface {
     public void removeItemById(Long id) {
         if (checkIfExistID(id)) {
             dataBase.removeIf(entry -> entry.getId().compareTo(id) == 0);
-            System.out.println(Messages.SUCSESSFULLY_REMOVED);
+            System.out.println(Messages.SUCCESSFULLY_REMOVED);
         }
     }
 

@@ -33,7 +33,13 @@ public class UserInput {
     }
 
     static Enum userInputEnum() {
-        System.out.print("Введите категорию продукта: ");
+        System.out.print(Messages.INPUT_CATEGORY);
        return Category.OTHER; //TODO допилить работу с вводом категории
+    }
+
+    static String userInputDescription() {
+        System.out.println(Messages.INPUT_DESCRIPTION);
+        scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
 }

@@ -11,6 +11,7 @@ public class Product implements Serializable {
     private BigDecimal price;
     private Enum category;
     private BigDecimal discount;
+    private BigDecimal actualPrice;
     private String description;
 
     public Product() {
@@ -24,6 +25,7 @@ public class Product implements Serializable {
         this.category = category;
         this.description = "Нет описания продукта.";
         this.discount = new BigDecimal(0);
+        this.actualPrice = this.price;
     }
 
     public String getName() {
@@ -68,6 +70,7 @@ public class Product implements Serializable {
 
     public void setDiscount(BigDecimal discount) {
         this.discount = discount;
+        this.actualPrice = this.price.subtract(discount.multiply(this.price).movePointLeft(2));
     }
 
     public void setDescription(String description) {
@@ -95,9 +98,10 @@ public class Product implements Serializable {
         return "Product " +
                 "id=" + id +
                 ", name=" + name + '\'' +
-                ", price=" + price +
                 ", category=" + category +
+                ", regular price=" + price +
                 ", discount=" + discount +
+                ", actual price=" + actualPrice +
                 ", description=" + description;
     }
 }
