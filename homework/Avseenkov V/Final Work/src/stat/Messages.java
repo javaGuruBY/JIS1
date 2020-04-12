@@ -15,5 +15,7 @@ public class Messages {
     public static final String INPUT_PRICE = "Введите цену продукта ";
     public static final String INPUT_NAME = "Введите название продукта ";
     public static final String INPUT_DISCOUNT = "Введите величину скидки в % ";
+    public static final String NO_DESCRIPTION = "Нет описания продукта";
+    public static final String MAIN_MENU = "-= ГЛАВНОЕ МЕНЮ =-";
 
 }

@@ -21,7 +21,7 @@ public class ConsoleUI {
     }
 
     public void mainMenu() {
-        System.out.println("Главное меню");
+        System.out.println(Messages.MAIN_MENU);
         printMainMenuList();
         executeAfterUserSelect();
     }

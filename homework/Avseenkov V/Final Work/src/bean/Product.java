@@ -1,6 +1,9 @@
 package bean;
 
+import stat.Messages;
+
 import java.io.Serializable;
+import java.lang.reflect.Member;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -23,7 +26,7 @@ public class Product implements Serializable {
         this.name = name;
         this.price = price;
         this.category = category;
-        this.description = "Нет описания продукта.";
+        this.description = Messages.NO_DESCRIPTION;
         this.discount = new BigDecimal(0);
         this.actualPrice = this.price;
     }
