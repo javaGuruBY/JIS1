@@ -10,12 +10,13 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import static database.InMemoryDataBase.dataBase;
+import static service.ValidationService.*;
 
 public class ProductService implements ProductInterface {
     @Override
     public void setItem() {
         Product product = new Product(userInputName(), userInputBigDecimalPrice(), userInputEnum());
-        if (checkCorrectUserInput(product)) {
+        if (checkCorrectUserInput(product) && checkForDuplicates(product.getName())) {
             dataBase.add(product);
             System.out.println("\n" + Messages.PRODUCT_ADDED);
         }
@@ -23,7 +24,7 @@ public class ProductService implements ProductInterface {
 
     @Override
     public void editItemPrice(Long id, BigDecimal newPrice) {
-        if (checkIfExistID(id)) {
+        if (checkIfExistID(id) && newPrice.compareTo((BigDecimal.valueOf(0))) > -1) {
             dataBase.stream()
                     .filter(i -> i.getId().equals(id))
                     .forEach(i -> i.setPrice(newPrice));
@@ -32,7 +33,7 @@ public class ProductService implements ProductInterface {
 
     @Override
     public void setItemDiscount(Long id, BigDecimal newDiscount) {
-        if (checkIfExistID(id)) {
+        if (checkIfExistID(id) && newDiscount.compareTo(BigDecimal.valueOf(0)) > -1) {
             dataBase.stream()
                     .filter(i -> i.getId().equals(id))
                     .forEach(i -> i.setDiscount(newDiscount));
@@ -41,9 +42,11 @@ public class ProductService implements ProductInterface {
 
     @Override
     public void editItemDescription(Long id, String description) {
-        dataBase.stream()
-                .filter(i -> i.getId().equals(id))
-                .forEach(i -> i.setDescription(description));
+        if (checkIfExistID(id)) {
+            dataBase.stream()
+                    .filter(i -> i.getId().equals(id))
+                    .forEach(i -> i.setDescription(description));
+        }
     }
 
     @Override
@@ -60,6 +63,8 @@ public class ProductService implements ProductInterface {
             if (item.getId().compareTo(id) == 0) {
                 if (item != null) {
                     return item;
+                } else {
+                    System.err.println(Messages.NO_ITEM);
                 }
             }
         }
@@ -70,25 +75,5 @@ public class ProductService implements ProductInterface {
     public List<Product> getListOfProducts() {
         return dataBase;
     }
-
-    private boolean checkCorrectUserInput(Product product) {
-        if (product.getName() == null) {
-            System.out.println(Messages.INCORRECT_NAME);
-            return false;
-        } else if (product.getPrice().compareTo(BigDecimal.valueOf(0)) < 0) {
-            System.out.println(Messages.INCORRECT_PRICE);
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    boolean checkIfExistID(Long id) {
-        if (dataBase.stream().anyMatch(entry -> entry.getId().compareTo(id) == 0)) {
-            return true;
-        } else {
-            System.err.println(Messages.NO_ITEM);
-            return false;
-        }
-    }
 }
+

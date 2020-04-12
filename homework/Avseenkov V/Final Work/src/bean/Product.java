@@ -22,6 +22,8 @@ public class Product implements Serializable {
         this.name = name;
         this.price = price;
         this.category = category;
+        this.description = "Нет описания продукта.";
+        this.discount = new BigDecimal(0);
     }
 
     public String getName() {

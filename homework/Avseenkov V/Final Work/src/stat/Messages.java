@@ -9,4 +9,5 @@ public class Messages {
     public static final String INCORRECT_MENU_SELECT = "Нет такого пункта меню. Попробуйте снова";
     public static final String NO_ITEM = "Нет такого ID";
     public static final String SUCSESSFULLY_REMOVED = "Удаление завершено.";
+    public static final String DUPLICATE = "Продукт с таким именем уже существует";
 }
