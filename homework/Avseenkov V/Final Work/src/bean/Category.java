@@ -9,5 +9,5 @@ public enum Category {
     MILK_PRODUCTS,
     JUICE,
     ELECTRONIC_DEVICES,
-    OTHER;
+    OTHER
 }
