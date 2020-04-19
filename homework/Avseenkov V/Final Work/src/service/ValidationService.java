@@ -9,7 +9,7 @@ import static database.InMemoryDataBase.dataBase;
 
 public class ValidationService {
 
-    static boolean checkForDuplicates(String name) {
+    public static boolean checkForDuplicates(String name) {
         for (Product item : dataBase) {
             if (item.getName().compareTo(name) == 0) {
                 System.err.println(Messages.DUPLICATE);
