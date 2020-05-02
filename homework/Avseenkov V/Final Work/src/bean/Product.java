@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class Product implements Serializable {
     private String name;
-    private Long id; //todo use atomic long
+    private Long id;
     private static AtomicLong globalID = new AtomicLong(0);
     private BigDecimal price;
     private Enum category;

@@ -9,7 +9,8 @@ import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ValidationServiceTest {
     List<Product> testDataBase = new LinkedList<>();
